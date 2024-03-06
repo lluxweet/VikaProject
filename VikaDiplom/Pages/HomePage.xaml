@@ -1,0 +1,28 @@
+﻿<Page x:Class="VikaDiplom.Pages.HomePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:VikaDiplom.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="1000"
+      Title="HomePage">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="200"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.Column="1" Background="{StaticResource странный цвет}">
+            <StackPanel Margin="0 10 0 70" Orientation="Horizontal">
+                <TextBlock Text="Таранова В." Style="{StaticResource TextBig}" Foreground="White" Margin="10 5 0 0" Height="40"/>
+                <Button Content="X" Width="28" Margin="10" Style="{StaticResource homeBtn}" Height="35" x:Name="btxExit" Click="btxExit_Click"/>
+            </StackPanel>           
+            <Button Style="{StaticResource homeBtn}" Content="дети" Height="35" Width="170" Margin="0 10" x:Name="btnchild" Click="btnchild_Click"/>
+            <Button Style="{StaticResource homeBtn}" Content="опекунство" Height="35" Width="170" Margin="0 10" x:Name="btnOpeca" Click="btnOpeca_Click"/>
+            <Button Style="{StaticResource homeBtn}" Content="заявления" Height="35" Width="170" Margin="0 10" x:Name="btnApp" Click="btnApp_Click"/>
+        </StackPanel>       
+        <Frame Grid.Column="0" Background="{StaticResource белый}" x:Name="frame"/>
+    </Grid>
+</Page>

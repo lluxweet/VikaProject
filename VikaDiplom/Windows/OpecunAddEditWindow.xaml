@@ -1,0 +1,34 @@
+﻿<Window x:Class="VikaDiplom.Windows.OpecunAddEditWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:VikaDiplom.Windows"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Title="Добавление/редактирование данных опекунов" Height="660" Width="500">
+    <Grid>
+        <ScrollViewer>
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <TextBlock Text="Основная информация" Style="{StaticResource TextBig}" Margin="0 20 0 20"/>
+
+                <TextBlock Text="Фамилия" Style="{StaticResource TextSmall}"/>
+                <TextBox Style="{StaticResource TextBox}" Text="{Binding Фамилия}" x:Name="txbFamilia"/>
+                <TextBlock Text="Имя" Style="{StaticResource TextSmall}"/>
+                <TextBox Style="{StaticResource TextBox}" Text="{Binding Имя}" x:Name="txbName"/>
+                <TextBlock Text="Отчество" Style="{StaticResource TextSmall}"/>
+                <TextBox Style="{StaticResource TextBox}" Text="{Binding Отчество}" x:Name="txbOtchestvo"/>
+                <TextBlock Text="Дата рождения:" Style="{StaticResource TextSmall}"/>
+                <DatePicker Style="{StaticResource DatePicer}" SelectedDate="{Binding ДатаРождения}"/>
+                <TextBlock Text="Телефон:" Style="{StaticResource TextSmall}" x:Name="txbAge"/>
+                <TextBox Style="{StaticResource TextBox}" Text="{Binding Имя}" x:Name="txbPhone" PreviewTextInput="txbPhone_PreviewTextInput"/>
+                <TextBlock Text="Цель обращения:" Style="{StaticResource TextSmall}"/>
+                <ComboBox Style="{StaticResource Combobox}" x:Name="cmbCelObrash" SelectedValuePath="Код" SelectedValue="{Binding ЦельОбращенияКод}" DisplayMemberPath="Имя"/>
+                <TextBlock Text="Дата обращения:" Style="{StaticResource TextSmall}"/>
+                <DatePicker Style="{StaticResource DatePicer}" SelectedDate="{Binding ДатаОбращения}"/>
+
+                <Button Grid.Column="1" Content="Сохранить" x:Name="bntSave" Click="bntSave_Click" Grid.Row="3" Style="{StaticResource BUTTONCHKI}" Width="200" Height="50" Margin="0 20 0 20"/>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Window>

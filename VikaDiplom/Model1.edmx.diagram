@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="7f8172bbbc7744ad975b8a2965c940b8" Name="Diagram1" ZoomLevel="82">
+        <EntityTypeShape EntityType="TaranivaVikaDiplomModel.sysdiagrams" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TaranivaVikaDiplomModel.Возраст" Width="1.5" PointX="0.75" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="TaranivaVikaDiplomModel.Город" Width="1.5" PointX="0.75" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="TaranivaVikaDiplomModel.Дети" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="TaranivaVikaDiplomModel.Заявления" Width="1.5" PointX="5.25" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="TaranivaVikaDiplomModel.КатегорияВозраста" Width="1.5" PointX="0.75" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="TaranivaVikaDiplomModel.КатегорияЗдоровья" Width="1.5" PointX="0.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TaranivaVikaDiplomModel.Опекуны" Width="1.5" PointX="3" PointY="28.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="TaranivaVikaDiplomModel.Пол" Width="1.5" PointX="0.75" PointY="14" IsExpanded="true" />
+        <EntityTypeShape EntityType="TaranivaVikaDiplomModel.Пользователи" Width="1.5" PointX="7.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TaranivaVikaDiplomModel.Регион" Width="1.5" PointX="0.75" PointY="16.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="TaranivaVikaDiplomModel.РешениеОпеки" Width="1.5" PointX="3" PointY="9.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="TaranivaVikaDiplomModel.ТипЗаявления" Width="1.5" PointX="3" PointY="11.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="TaranivaVikaDiplomModel.ТипЛичности" Width="1.5" PointX="0.75" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TaranivaVikaDiplomModel.Улица" Width="1.5" PointX="0.75" PointY="21.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="TaranivaVikaDiplomModel.ЦветВолос" Width="1.5" PointX="0.75" PointY="23.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="TaranivaVikaDiplomModel.ЦветГлаз" Width="1.5" PointX="0.75" PointY="25.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TaranivaVikaDiplomModel.ЦельОбращения" Width="1.5" PointX="0.75" PointY="29.5" IsExpanded="true" />
+        <AssociationConnector Association="TaranivaVikaDiplomModel.FK_Дети_Возраст" ManuallyRouted="false" />
+        <AssociationConnector Association="TaranivaVikaDiplomModel.FK_Дети_Город" ManuallyRouted="false" />
+        <AssociationConnector Association="TaranivaVikaDiplomModel.FK_Дети_КатегорияВозраста" ManuallyRouted="false" />
+        <AssociationConnector Association="TaranivaVikaDiplomModel.FK_Дети_КатегорияЗдоровья" ManuallyRouted="false" />
+        <AssociationConnector Association="TaranivaVikaDiplomModel.FK_Дети_Пол" ManuallyRouted="false" />
+        <AssociationConnector Association="TaranivaVikaDiplomModel.FK_Дети_Регион" ManuallyRouted="false" />
+        <AssociationConnector Association="TaranivaVikaDiplomModel.FK_Дети_ТипЛичности" ManuallyRouted="false" />
+        <AssociationConnector Association="TaranivaVikaDiplomModel.FK_Дети_Улица" ManuallyRouted="false" />
+        <AssociationConnector Association="TaranivaVikaDiplomModel.FK_Дети_ЦветВолос" ManuallyRouted="false" />
+        <AssociationConnector Association="TaranivaVikaDiplomModel.FK_Дети_ЦветГлаз" ManuallyRouted="false" />
+        <AssociationConnector Association="TaranivaVikaDiplomModel.FK_Заявления_Дети" ManuallyRouted="false" />
+        <AssociationConnector Association="TaranivaVikaDiplomModel.FK_Заявления_Опекуны" ManuallyRouted="false" />
+        <AssociationConnector Association="TaranivaVikaDiplomModel.FK_Заявления_РешениеОпеки" ManuallyRouted="false" />
+        <AssociationConnector Association="TaranivaVikaDiplomModel.FK_Заявления_ТипЗаявления" ManuallyRouted="false" />
+        <AssociationConnector Association="TaranivaVikaDiplomModel.FK_Опекуны_ЦельОбращения" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

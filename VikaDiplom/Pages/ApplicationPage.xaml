@@ -1,0 +1,82 @@
+﻿<Page x:Class="VikaDiplom.Pages.ApplicationPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:VikaDiplom.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="1000"
+      Title="ApplicationPage">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+            <TextBlock Text="поиск:" Style="{StaticResource TextBig}" Height="35" Margin="10 0 10 0" Foreground="{StaticResource темный}"/>
+            <TextBox Style="{StaticResource TextBox}" Width="310" Height="34" x:Name="txbSerch" TextChanged="txbSerch_TextChanged"/>
+            <Button x:Name="BtnAdd" Content="Добавить" VerticalAlignment="Bottom" Grid.Row="1" Style="{StaticResource Navigatoin}" Margin="10 0 0 0" Height="38" Width="144" Click="BtnAdd_Click"/>
+            <Button x:Name="BtnPrint" Content="Печать" VerticalAlignment="Bottom" Grid.Row="1" Style="{StaticResource Navigatoin}" Margin="50 0 0 0" Height="38" Width="130"/>
+        </StackPanel>
+        <ScrollViewer Grid.Row="1" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+            <DataGrid AutoGenerateColumns="False" x:Name="GridApp" Style="{StaticResource DataGrid}" Width="996">
+                <DataGrid.Resources>
+                    <Style TargetType="TextBlock" x:Key="WrapText">
+                        <Setter Property="TextWrapping" Value="Wrap"/>
+                    </Style>
+                </DataGrid.Resources>
+                <DataGrid.Columns>
+                    <DataGridTextColumn
+                    Binding="{Binding ДатаЗаявки, StringFormat={}{0:dd.MM.yyyy}}"
+                    Header="дата заявления"
+                    Width="*"/>
+                    <DataGridTextColumn
+                    Binding="{Binding Опекуны.Фамилия}"
+                    Header="опекун"
+                    Width="*"/>
+                    <DataGridTextColumn
+                    Binding="{Binding Дети.Фамилия}"
+                    Header="ребенок"
+                    Width="*"/>
+                    <DataGridTextColumn
+                    Binding="{Binding ТипЗаявления.Имя}"
+                    Header="тип заявления"
+                    Width="*"/>
+                    <DataGridTextColumn
+                    Binding="{Binding РешениеОпеки.Имя}"
+                    Header="решение"
+                    Width="*"/>
+                    <DataGridTextColumn
+                    Binding="{Binding КомментарийРешения}"
+                    Header="комментарий"
+                    ElementStyle="{StaticResource WrapText}"
+                    FontSize="12"
+                    Width="*"/>
+                    <DataGridTextColumn
+                    Binding="{Binding ДатаПринятияРешения, StringFormat={}{0:dd.MM.yyyy}}"
+                    Header="дата принятия"
+                    Width="*"/>
+                    <DataGridTemplateColumn>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button BorderThickness="0" Background="Transparent" x:Name="BtnEdit" Click="BtnEdit_Click">
+                                    <TextBlock Text="✎" Opacity="0.8" Width="23"/>
+                                </Button>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button BorderThickness="0" Background="Transparent" x:Name="BtnDelet" Click="BtnDelet_Click">
+                                    <TextBlock Text="🗑️" Width="23" Opacity="0.8"/>
+                                </Button>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+        </ScrollViewer>
+    </Grid>
+</Page>

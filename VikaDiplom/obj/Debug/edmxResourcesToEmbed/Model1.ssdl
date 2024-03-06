@@ -1,0 +1,424 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Хранилище TaranivaVikaDiplomModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="Возраст">
+    <Key>
+      <PropertyRef Name="Код" />
+    </Key>
+    <Property Name="Код" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Имя" Type="int" />
+  </EntityType>
+  <EntityType Name="Город">
+    <Key>
+      <PropertyRef Name="Код" />
+    </Key>
+    <Property Name="Код" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Имя" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Дети">
+    <Key>
+      <PropertyRef Name="Код" />
+    </Key>
+    <Property Name="Код" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Фамилия" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Имя" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Отчество" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ПолКод" Type="int" Nullable="false" />
+    <Property Name="ДатаРождения" Type="date" Nullable="false" />
+    <Property Name="ВозрастКод" Type="int" Nullable="false" />
+    <Property Name="РегионКод" Type="int" Nullable="false" />
+    <Property Name="ГородКод" Type="int" Nullable="false" />
+    <Property Name="УлицаКод" Type="int" Nullable="false" />
+    <Property Name="НомерДома" Type="int" Nullable="false" />
+    <Property Name="КатегорияВозрастаКод" Type="int" Nullable="false" />
+    <Property Name="КатегорияЗдоровьяКод" Type="int" Nullable="false" />
+    <Property Name="ДатаУстановленияУчета" Type="date" Nullable="false" />
+    <Property Name="ДатаСнятияСУчета" Type="date" />
+    <Property Name="ЦветГлазКод" Type="int" />
+    <Property Name="ЦветВолосКод" Type="int" />
+    <Property Name="ТипЛичностиКод" Type="int" />
+    <Property Name="Рост" Type="int" />
+    <Property Name="Вес" Type="int" />
+  </EntityType>
+  <EntityType Name="Заявления">
+    <Key>
+      <PropertyRef Name="Код" />
+    </Key>
+    <Property Name="Код" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ДатаЗаявки" Type="date" Nullable="false" />
+    <Property Name="КодОпекуна" Type="int" Nullable="false" />
+    <Property Name="КодРебенка" Type="int" Nullable="false" />
+    <Property Name="ТипЗаявленияКод" Type="int" Nullable="false" />
+    <Property Name="РешениеОпекиКод" Type="int" />
+    <Property Name="ДатаПринятияРешения" Type="date" />
+    <Property Name="КомментарийРешения" Type="varchar" MaxLength="300" />
+  </EntityType>
+  <EntityType Name="КатегорияВозраста">
+    <Key>
+      <PropertyRef Name="Код" />
+    </Key>
+    <Property Name="Код" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Имя" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="КатегорияЗдоровья">
+    <Key>
+      <PropertyRef Name="Код" />
+    </Key>
+    <Property Name="Код" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Имя" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Опекуны">
+    <Key>
+      <PropertyRef Name="Код" />
+    </Key>
+    <Property Name="Код" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Фамилия" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Имя" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Отчество" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ДатаРождения" Type="date" Nullable="false" />
+    <Property Name="Телефон" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="ЦельОбращенияКод" Type="int" Nullable="false" />
+    <Property Name="ДатаОбращения" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Пол">
+    <Key>
+      <PropertyRef Name="Код" />
+    </Key>
+    <Property Name="Код" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Имя" Type="nvarchar" MaxLength="1" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Пользователи">
+    <Key>
+      <PropertyRef Name="Код" />
+    </Key>
+    <Property Name="Код" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Фамилия" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Логин" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="Пароль" Type="nvarchar" MaxLength="30" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Регион">
+    <Key>
+      <PropertyRef Name="Код" />
+    </Key>
+    <Property Name="Код" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Имя" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="РешениеОпеки">
+    <Key>
+      <PropertyRef Name="Код" />
+    </Key>
+    <Property Name="Код" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Имя" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="ТипЗаявления">
+    <Key>
+      <PropertyRef Name="Код" />
+    </Key>
+    <Property Name="Код" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Имя" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="ТипЛичности">
+    <Key>
+      <PropertyRef Name="Код" />
+    </Key>
+    <Property Name="Код" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Имя" Type="nvarchar" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="Улица">
+    <Key>
+      <PropertyRef Name="Код" />
+    </Key>
+    <Property Name="Код" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Имя" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="ЦветВолос">
+    <Key>
+      <PropertyRef Name="Код" />
+    </Key>
+    <Property Name="Код" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Имя" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="ЦветГлаз">
+    <Key>
+      <PropertyRef Name="Код" />
+    </Key>
+    <Property Name="Код" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Имя" Type="nvarchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ЦельОбращения">
+    <Key>
+      <PropertyRef Name="Код" />
+    </Key>
+    <Property Name="Код" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Имя" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK_Дети_Возраст">
+    <End Role="Возраст" Type="Self.Возраст" Multiplicity="1" />
+    <End Role="Дети" Type="Self.Дети" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Возраст">
+        <PropertyRef Name="Код" />
+      </Principal>
+      <Dependent Role="Дети">
+        <PropertyRef Name="ВозрастКод" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Дети_Город">
+    <End Role="Город" Type="Self.Город" Multiplicity="1" />
+    <End Role="Дети" Type="Self.Дети" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Город">
+        <PropertyRef Name="Код" />
+      </Principal>
+      <Dependent Role="Дети">
+        <PropertyRef Name="ГородКод" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Дети_КатегорияВозраста">
+    <End Role="КатегорияВозраста" Type="Self.КатегорияВозраста" Multiplicity="1" />
+    <End Role="Дети" Type="Self.Дети" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="КатегорияВозраста">
+        <PropertyRef Name="Код" />
+      </Principal>
+      <Dependent Role="Дети">
+        <PropertyRef Name="КатегорияВозрастаКод" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Дети_КатегорияЗдоровья">
+    <End Role="КатегорияЗдоровья" Type="Self.КатегорияЗдоровья" Multiplicity="1" />
+    <End Role="Дети" Type="Self.Дети" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="КатегорияЗдоровья">
+        <PropertyRef Name="Код" />
+      </Principal>
+      <Dependent Role="Дети">
+        <PropertyRef Name="КатегорияЗдоровьяКод" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Дети_Пол">
+    <End Role="Пол" Type="Self.Пол" Multiplicity="1" />
+    <End Role="Дети" Type="Self.Дети" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Пол">
+        <PropertyRef Name="Код" />
+      </Principal>
+      <Dependent Role="Дети">
+        <PropertyRef Name="ПолКод" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Дети_Регион">
+    <End Role="Регион" Type="Self.Регион" Multiplicity="1" />
+    <End Role="Дети" Type="Self.Дети" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Регион">
+        <PropertyRef Name="Код" />
+      </Principal>
+      <Dependent Role="Дети">
+        <PropertyRef Name="РегионКод" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Дети_ТипЛичности">
+    <End Role="ТипЛичности" Type="Self.ТипЛичности" Multiplicity="0..1" />
+    <End Role="Дети" Type="Self.Дети" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ТипЛичности">
+        <PropertyRef Name="Код" />
+      </Principal>
+      <Dependent Role="Дети">
+        <PropertyRef Name="ТипЛичностиКод" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Дети_Улица">
+    <End Role="Улица" Type="Self.Улица" Multiplicity="1" />
+    <End Role="Дети" Type="Self.Дети" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Улица">
+        <PropertyRef Name="Код" />
+      </Principal>
+      <Dependent Role="Дети">
+        <PropertyRef Name="УлицаКод" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Дети_ЦветВолос">
+    <End Role="ЦветВолос" Type="Self.ЦветВолос" Multiplicity="0..1" />
+    <End Role="Дети" Type="Self.Дети" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ЦветВолос">
+        <PropertyRef Name="Код" />
+      </Principal>
+      <Dependent Role="Дети">
+        <PropertyRef Name="ЦветВолосКод" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Дети_ЦветГлаз">
+    <End Role="ЦветГлаз" Type="Self.ЦветГлаз" Multiplicity="0..1" />
+    <End Role="Дети" Type="Self.Дети" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ЦветГлаз">
+        <PropertyRef Name="Код" />
+      </Principal>
+      <Dependent Role="Дети">
+        <PropertyRef Name="ЦветГлазКод" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Заявления_Дети">
+    <End Role="Дети" Type="Self.Дети" Multiplicity="1" />
+    <End Role="Заявления" Type="Self.Заявления" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Дети">
+        <PropertyRef Name="Код" />
+      </Principal>
+      <Dependent Role="Заявления">
+        <PropertyRef Name="КодРебенка" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Заявления_Опекуны">
+    <End Role="Опекуны" Type="Self.Опекуны" Multiplicity="1" />
+    <End Role="Заявления" Type="Self.Заявления" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Опекуны">
+        <PropertyRef Name="Код" />
+      </Principal>
+      <Dependent Role="Заявления">
+        <PropertyRef Name="КодОпекуна" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Заявления_РешениеОпеки">
+    <End Role="РешениеОпеки" Type="Self.РешениеОпеки" Multiplicity="0..1" />
+    <End Role="Заявления" Type="Self.Заявления" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="РешениеОпеки">
+        <PropertyRef Name="Код" />
+      </Principal>
+      <Dependent Role="Заявления">
+        <PropertyRef Name="РешениеОпекиКод" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Заявления_ТипЗаявления">
+    <End Role="ТипЗаявления" Type="Self.ТипЗаявления" Multiplicity="1" />
+    <End Role="Заявления" Type="Self.Заявления" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ТипЗаявления">
+        <PropertyRef Name="Код" />
+      </Principal>
+      <Dependent Role="Заявления">
+        <PropertyRef Name="ТипЗаявленияКод" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Опекуны_ЦельОбращения">
+    <End Role="ЦельОбращения" Type="Self.ЦельОбращения" Multiplicity="1" />
+    <End Role="Опекуны" Type="Self.Опекуны" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ЦельОбращения">
+        <PropertyRef Name="Код" />
+      </Principal>
+      <Dependent Role="Опекуны">
+        <PropertyRef Name="ЦельОбращенияКод" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Хранилище TaranivaVikaDiplomModelContainer">
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Возраст" EntityType="Self.Возраст" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Город" EntityType="Self.Город" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Дети" EntityType="Self.Дети" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Заявления" EntityType="Self.Заявления" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="КатегорияВозраста" EntityType="Self.КатегорияВозраста" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="КатегорияЗдоровья" EntityType="Self.КатегорияЗдоровья" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Опекуны" EntityType="Self.Опекуны" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Пол" EntityType="Self.Пол" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Пользователи" EntityType="Self.Пользователи" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Регион" EntityType="Self.Регион" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="РешениеОпеки" EntityType="Self.РешениеОпеки" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ТипЗаявления" EntityType="Self.ТипЗаявления" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ТипЛичности" EntityType="Self.ТипЛичности" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Улица" EntityType="Self.Улица" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ЦветВолос" EntityType="Self.ЦветВолос" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ЦветГлаз" EntityType="Self.ЦветГлаз" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ЦельОбращения" EntityType="Self.ЦельОбращения" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Дети_Возраст" Association="Self.FK_Дети_Возраст">
+      <End Role="Возраст" EntitySet="Возраст" />
+      <End Role="Дети" EntitySet="Дети" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Дети_Город" Association="Self.FK_Дети_Город">
+      <End Role="Город" EntitySet="Город" />
+      <End Role="Дети" EntitySet="Дети" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Дети_КатегорияВозраста" Association="Self.FK_Дети_КатегорияВозраста">
+      <End Role="КатегорияВозраста" EntitySet="КатегорияВозраста" />
+      <End Role="Дети" EntitySet="Дети" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Дети_КатегорияЗдоровья" Association="Self.FK_Дети_КатегорияЗдоровья">
+      <End Role="КатегорияЗдоровья" EntitySet="КатегорияЗдоровья" />
+      <End Role="Дети" EntitySet="Дети" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Дети_Пол" Association="Self.FK_Дети_Пол">
+      <End Role="Пол" EntitySet="Пол" />
+      <End Role="Дети" EntitySet="Дети" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Дети_Регион" Association="Self.FK_Дети_Регион">
+      <End Role="Регион" EntitySet="Регион" />
+      <End Role="Дети" EntitySet="Дети" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Дети_ТипЛичности" Association="Self.FK_Дети_ТипЛичности">
+      <End Role="ТипЛичности" EntitySet="ТипЛичности" />
+      <End Role="Дети" EntitySet="Дети" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Дети_Улица" Association="Self.FK_Дети_Улица">
+      <End Role="Улица" EntitySet="Улица" />
+      <End Role="Дети" EntitySet="Дети" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Дети_ЦветВолос" Association="Self.FK_Дети_ЦветВолос">
+      <End Role="ЦветВолос" EntitySet="ЦветВолос" />
+      <End Role="Дети" EntitySet="Дети" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Дети_ЦветГлаз" Association="Self.FK_Дети_ЦветГлаз">
+      <End Role="ЦветГлаз" EntitySet="ЦветГлаз" />
+      <End Role="Дети" EntitySet="Дети" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Заявления_Дети" Association="Self.FK_Заявления_Дети">
+      <End Role="Дети" EntitySet="Дети" />
+      <End Role="Заявления" EntitySet="Заявления" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Заявления_Опекуны" Association="Self.FK_Заявления_Опекуны">
+      <End Role="Опекуны" EntitySet="Опекуны" />
+      <End Role="Заявления" EntitySet="Заявления" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Заявления_РешениеОпеки" Association="Self.FK_Заявления_РешениеОпеки">
+      <End Role="РешениеОпеки" EntitySet="РешениеОпеки" />
+      <End Role="Заявления" EntitySet="Заявления" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Заявления_ТипЗаявления" Association="Self.FK_Заявления_ТипЗаявления">
+      <End Role="ТипЗаявления" EntitySet="ТипЗаявления" />
+      <End Role="Заявления" EntitySet="Заявления" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Опекуны_ЦельОбращения" Association="Self.FK_Опекуны_ЦельОбращения">
+      <End Role="ЦельОбращения" EntitySet="ЦельОбращения" />
+      <End Role="Опекуны" EntitySet="Опекуны" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

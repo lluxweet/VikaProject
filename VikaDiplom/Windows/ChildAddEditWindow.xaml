@@ -1,0 +1,72 @@
+﻿<Window x:Class="VikaDiplom.Windows.ChildAddEditWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:VikaDiplom.Windows"
+        mc:Ignorable="d"
+        MinHeight="660"
+        MinWidth="500"
+        WindowStartupLocation="CenterScreen"
+        Title="Добавление/редактирование данных детей" Height="660" Width="500">
+    <Grid>
+        <ScrollViewer>
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock Text="Основная информация" Style="{StaticResource TextBig}" Margin="0 20 0 20"/>            
+            
+            <TextBlock Text="Фамилия" Style="{StaticResource TextSmall}"/>
+            <TextBox Style="{StaticResource TextBox}" Text="{Binding Фамилия}" x:Name="txbFamilia"/>
+            <TextBlock Text="Имя" Style="{StaticResource TextSmall}"/>
+            <TextBox Style="{StaticResource TextBox}" Text="{Binding Имя}" x:Name="txbName"/>
+            <TextBlock Text="Отчество" Style="{StaticResource TextSmall}"/>
+            <TextBox Style="{StaticResource TextBox}" Text="{Binding Отчество}" x:Name="txbOtchestvo"/>
+            <TextBlock Text="Пол:" Style="{StaticResource TextSmall}"/>
+            <ComboBox Style="{StaticResource Combobox}" x:Name="cmbSex" SelectedValuePath="Код" SelectedValue="{Binding ПолКод}" DisplayMemberPath="Имя"/>
+            <TextBlock Text="Дата рождения:" Style="{StaticResource TextSmall}"/>
+            <DatePicker Style="{StaticResource DatePicer}" SelectedDate="{Binding ДатаРождения}"/>
+            <TextBlock Text="Возраст:" Style="{StaticResource TextSmall}" x:Name="txbAge"/>
+            <ComboBox Style="{StaticResource Combobox}" x:Name="cmbAge" SelectedValuePath="Код" SelectedValue="{Binding ВозрастКод}" DisplayMemberPath="Имя"/>
+            <TextBlock Text="Возрастная категория:" Style="{StaticResource TextSmall}"/>
+            <ComboBox Style="{StaticResource Combobox}" x:Name="cmbCategAge" SelectedValuePath="Код" SelectedValue="{Binding КатегорияВозрастаКод}" DisplayMemberPath="Имя"/>
+            <TextBlock Text="Категория здоровья(группа):" Style="{StaticResource TextSmall}"/>
+            <ComboBox Style="{StaticResource Combobox}" x:Name="cmbCategZdor" SelectedValuePath="Код" SelectedValue="{Binding КатегорияЗдоровьяКод}" DisplayMemberPath="Имя"/>
+
+            <TextBlock Text="Информация об адресе" Style="{StaticResource TextBig}" Margin="0 20 0 20"/>
+            
+            <TextBlock Text="Регион:" Style="{StaticResource TextSmall}"/>
+            <ComboBox Style="{StaticResource Combobox}" x:Name="cmbRegion" SelectedValuePath="Код" SelectedValue="{Binding РегионКод}" DisplayMemberPath="Имя"/>
+            <TextBlock Text="Город:" Style="{StaticResource TextSmall}"/>
+            <ComboBox Style="{StaticResource Combobox}" x:Name="cmbCity" SelectedValuePath="Код" SelectedValue="{Binding ГородКод}" DisplayMemberPath="Имя"/>
+            <TextBlock Text="Улица:" Style="{StaticResource TextSmall}"/>
+            <ComboBox Style="{StaticResource Combobox}" x:Name="cmbStreet" SelectedValuePath="Код" SelectedValue="{Binding УлицаКод}" DisplayMemberPath="Имя"/>
+            <TextBlock Text="Номер дома/квартиры:" Style="{StaticResource TextSmall}"/>
+            <TextBox Style="{StaticResource TextBox}" x:Name="txbNumberHouse" Width="96" Text="{Binding НомерДома}"/>
+
+            <TextBlock Text="Дополнительная информация*:" Style="{StaticResource TextBig}" Margin="0 20 0 20"/>
+
+            <TextBlock Text="Цвет волос:" Style="{StaticResource TextSmall}"/>
+            <ComboBox Style="{StaticResource Combobox}" x:Name="cmbColorVolos" SelectedValuePath="Код" SelectedValue="{Binding ЦветВолосКод}" DisplayMemberPath="Имя"/>
+            <TextBlock Text="Цвет глаз:" Style="{StaticResource TextSmall}"/>
+            <ComboBox Style="{StaticResource Combobox}" x:Name="cmbGlaza" SelectedValuePath="Код" SelectedValue="{Binding ЦветГлазКод}" DisplayMemberPath="Имя"/>
+            <TextBlock Text="Тип личности:" Style="{StaticResource TextSmall}"/>
+            <ComboBox Style="{StaticResource Combobox}" x:Name="cmbLichnost" SelectedValuePath="Код" SelectedValue="{Binding ТипЛичностиКод}" DisplayMemberPath="Имя"/>
+            <TextBlock Text="Рост:" Style="{StaticResource TextSmall}"/>
+            <TextBox Style="{StaticResource TextBox}" Text="{Binding Рост}"/>
+            <TextBlock Text="Вес:" Style="{StaticResource TextSmall}"/>
+            <TextBox Style="{StaticResource TextBox}"  Text="{Binding Вес}"/>
+
+            <TextBlock Text="Дополнительная информация*:" Style="{StaticResource TextBig}" Margin="0 20 0 20"/>
+
+            <TextBlock Text="Дата установления на учет опеки:" Style="{StaticResource TextSmall}"/>
+            <DatePicker Style="{StaticResource DatePicer}" SelectedDate="{Binding ДатаУстановленияУчета}"/>
+            <TextBlock Text="Дата снятия с учета:" Style="{StaticResource TextSmall}"/>
+                <StackPanel Orientation="Horizontal">
+                    <DatePicker x:Name="dateSnyatie" Style="{StaticResource DatePicer}" SelectedDate="{Binding ДатаСнятияСУчета}" Width="321"/>
+                    <Button Content="X" Style="{StaticResource BUTTONCHKI}" Width="35" Height="30" x:Name="btnClear" Click="btnClear_Click"/>
+                </StackPanel>
+            
+            <Button Grid.Column="1" Content="Сохранить" x:Name="bntSave" Click="bntSave_Click" Grid.Row="3" Style="{StaticResource BUTTONCHKI}" Width="200" Height="50" Margin="0 20 0 20"/>
+        </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Window>

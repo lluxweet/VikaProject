@@ -1,0 +1,153 @@
+﻿<Application x:Class="VikaDiplom.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:VikaDiplom"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <SolidColorBrush x:Key="темный" Color="#352F44"/>
+        <SolidColorBrush x:Key="странный цвет" Color="#5C5470"/>
+        <SolidColorBrush x:Key="светлый" Color="#B9B4C7"/>
+        <SolidColorBrush x:Key="белый" Color="White"/>
+
+        <Style x:Key="TextBig" TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="Malgun Gothic Semilight"/>
+            <Setter Property="FontSize" Value="25"/>
+            <Setter Property="FontStretch" Value="UltraExpanded"/>            
+            <Setter Property="Foreground" Value="{StaticResource темный}"/>
+        </Style>
+        <Style x:Key="TextBig2" TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="Malgun Gothic Semilight"/>
+            <Setter Property="FontSize" Value="22"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="FontStretch" Value="UltraExpanded"/>
+            <Setter Property="Foreground" Value="{StaticResource странный цвет}"/>
+        </Style>
+        <Style x:Key="TextSmall" TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="Malgun Gothic Semilight"/>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="FontStretch" Value="UltraExpanded"/>
+            <Setter Property="Opacity" Value="0.6"/>
+            <Setter Property="Foreground" Value="{StaticResource темный}"/>
+        </Style>
+
+        <Style x:Key="Navigatoin" TargetType="Button">
+            <Setter Property="FontFamily" Value="Malgun Gothic Semilight"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="FontStretch" Value="UltraExpanded"/>           
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Background" Value="{StaticResource темный}"/>
+            <Setter Property="Foreground" Value="{StaticResource белый}"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="{StaticResource темный}"/>
+                    <Setter Property="Foreground" Value="{StaticResource белый}"/>
+                </Trigger>
+                <Trigger Property="IsMouseCaptured" Value="True">
+                    <Setter Property="Background" Value="{StaticResource странный цвет}"/>
+                    <Setter Property="Foreground" Value="{StaticResource белый}"/>
+                </Trigger>
+                <Trigger Property="Focusable" Value="True">
+                    <Setter Property="Background" Value="{StaticResource странный цвет}"/>
+                    <Setter Property="Foreground" Value="{StaticResource белый}"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        
+        <Style x:Key="homeBtn" TargetType="Button">
+            <Setter Property="FontFamily" Value="Malgun Gothic Semilight"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="FontStretch" Value="UltraExpanded"/>            
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Background" Value="{StaticResource белый}"/>
+            <Setter Property="Foreground" Value="{StaticResource темный}"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="{StaticResource белый}"/>
+                    <Setter Property="Foreground" Value="{StaticResource темный}"/>
+                </Trigger>
+                <Trigger Property="IsMouseCaptured" Value="True">
+                    <Setter Property="Background" Value="{StaticResource белый}"/>
+                    <Setter Property="Foreground" Value="{StaticResource темный}"/>
+                </Trigger>
+                <Trigger Property="Focusable" Value="True">
+                    <Setter Property="Background" Value="{StaticResource белый}"/>
+                    <Setter Property="Foreground" Value="{StaticResource темный}"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style x:Key="BUTTONCHKI" TargetType="Button">
+            <Setter Property="FontFamily" Value="Malgun Gothic Semilight"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="FontStretch" Value="UltraExpanded"/>
+            <Setter Property="Opacity" Value="0.8"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Background" Value="{StaticResource темный}"/>
+            <Setter Property="Foreground" Value="{StaticResource белый}"/>
+            <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="{StaticResource темный}"/>
+                    <Setter Property="Foreground" Value="{StaticResource белый}"/>
+                </Trigger>
+                <Trigger Property="IsMouseCaptured" Value="True">
+                    <Setter Property="Background" Value="{StaticResource странный цвет}"/>
+                    <Setter Property="Foreground" Value="{StaticResource белый}"/>
+                </Trigger>
+                <Trigger Property="Focusable" Value="True">
+                    <Setter Property="Background" Value="{StaticResource странный цвет}"/>
+                    <Setter Property="Foreground" Value="{StaticResource белый}"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style x:Key="TextBox" TargetType="TextBox">
+            <Setter Property="FontFamily" Value="Malgun Gothic Semilight"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="Foreground" Value="{StaticResource темный}"/>
+        </Style>
+
+        <Style x:Key="PasswordBox" TargetType="PasswordBox">
+            <Setter Property="FontFamily" Value="Malgun Gothic Semilight"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="Foreground" Value="{StaticResource темный}"/>
+        </Style>
+
+        <Style x:Key="DataGrid" TargetType="DataGrid">
+            <Setter Property="ColumnHeaderStyle" Value="{DynamicResource ColumnHeaderStyle}"/>
+            <Setter Property="FontSize" Value="15"/>            
+            <Setter Property="Background" Value="{StaticResource белый}"/>
+            <Setter Property="FontFamily" Value="Malgun Gothic Semilight"/>
+            <Setter Property="Foreground" Value="{StaticResource темный}"/>
+            <Setter Property="HorizontalScrollBarVisibility" Value="Auto"/>
+            <Setter Property="HorizontalGridLinesBrush" Value="Transparent"/>
+            <Setter Property="VerticalGridLinesBrush" Value="Transparent"/>
+            <Setter Property="AutoGenerateColumns" Value="False"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Stylus.IsFlicksEnabled" Value="False"/>
+            <Setter Property="HeadersVisibility" Value="Column"/>              
+            <Setter Property="IsReadOnly" Value="True"/>
+        </Style>
+
+        <Style x:Key="ColumnHeaderStyle" TargetType="DataGridColumnHeader">
+            <Setter Property="Height" Value="36"/>            
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Foreground" Value="{StaticResource темный}"/>
+            <Setter Property="FontSize" Value="20"/>            
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+
+        <Style TargetType="ComboBox" x:Key="Combobox">
+            <Setter Property="FontFamily" Value="Malgun Gothic Semilight"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="Foreground" Value="{StaticResource темный}"/>
+        </Style>
+
+        <Style TargetType="DatePicker" x:Key="DatePicer">
+            <Setter Property="FontFamily" Value="Malgun Gothic Semilight"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="Foreground" Value="{StaticResource темный}"/>
+        </Style>
+
+    </Application.Resources>
+</Application>
