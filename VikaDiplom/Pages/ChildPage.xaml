@@ -41,11 +41,7 @@
                     <DataGridTextColumn
             Binding="{Binding ДатаРождения, StringFormat={}{0:dd.MM.yyyy}}"
             Header="день рождения"
-            Width="*"/>
-                    <DataGridTextColumn
-            Binding="{Binding Возраст.Имя}"
-            Header="возраст"
-            Width="*"/>
+            Width="*"/>                    
                     <DataGridTextColumn
             Binding="{Binding КатегорияВозраста.Имя}"
             Header="катег. возраста"
@@ -53,7 +49,15 @@
                     <DataGridTextColumn
             Binding="{Binding КатегорияЗдоровья.Имя}"
             Header="здоровье"
-            Width="*"/>                   
+            Width="*"/>
+                    <DataGridTextColumn
+            Binding="{Binding ДатаУстановленияУчета, StringFormat={}{0:dd.MM.yyyy}}"
+            Header="начала учета"
+            Width="*"/>
+                    <DataGridTextColumn
+            Binding="{Binding ДатаСнятияСУчета, StringFormat={}{0:dd.MM.yyyy}}"
+            Header="конец учета"
+            Width="*"/>
                     <DataGridTemplateColumn>
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>

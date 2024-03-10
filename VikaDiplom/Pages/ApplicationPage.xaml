@@ -16,8 +16,7 @@
         <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
             <TextBlock Text="поиск:" Style="{StaticResource TextBig}" Height="35" Margin="10 0 10 0" Foreground="{StaticResource темный}"/>
             <TextBox Style="{StaticResource TextBox}" Width="310" Height="34" x:Name="txbSerch" TextChanged="txbSerch_TextChanged"/>
-            <Button x:Name="BtnAdd" Content="Добавить" VerticalAlignment="Bottom" Grid.Row="1" Style="{StaticResource Navigatoin}" Margin="10 0 0 0" Height="38" Width="144" Click="BtnAdd_Click"/>
-            <Button x:Name="BtnPrint" Content="Печать" VerticalAlignment="Bottom" Grid.Row="1" Style="{StaticResource Navigatoin}" Margin="50 0 0 0" Height="38" Width="130"/>
+            <Button x:Name="BtnAdd" Content="Добавить" VerticalAlignment="Bottom" Grid.Row="1" Style="{StaticResource Navigatoin}" Margin="10 0 0 0" Height="38" Width="144" Click="BtnAdd_Click"/>            
         </StackPanel>
         <ScrollViewer Grid.Row="1" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
             <DataGrid AutoGenerateColumns="False" x:Name="GridApp" Style="{StaticResource DataGrid}" Width="996">

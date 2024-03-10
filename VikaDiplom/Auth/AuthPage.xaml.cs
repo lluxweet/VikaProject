@@ -28,7 +28,29 @@ namespace VikaDiplom.Auth
 
         private void btnvxod_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new HomePage());
+            if (txblogin.Text.Length == 0)
+            {
+                MessageBox.Show("Введите логин");
+                return;
+            }
+
+            if (txbpassword.Password.Length == 0)
+            {
+                MessageBox.Show("Введите пароль");
+                return;
+            }
+
+            var authUser = TaranovaDiplomEntities.GetContext().Пользователи.Where(item => item.Логин.ToLower() == txblogin.Text.ToLower() && item.Пароль == txbpassword.Password).FirstOrDefault();
+
+            if (authUser != null)
+            {
+                NavigationService.Navigate(new HomePage());
+                MessageBox.Show("Авторизация успешна");
+            }
+            else
+            {
+                MessageBox.Show("Данные введены неверно");
+            }
         }
     }
 }
