@@ -22,6 +22,7 @@
             <Button Style="{StaticResource homeBtn}" Content="дети" Height="35" Width="170" Margin="0 10" x:Name="btnchild" Click="btnchild_Click"/>
             <Button Style="{StaticResource homeBtn}" Content="опекунство" Height="35" Width="170" Margin="0 10" x:Name="btnOpeca" Click="btnOpeca_Click"/>
             <Button Style="{StaticResource homeBtn}" Content="заявления" Height="35" Width="170" Margin="0 10" x:Name="btnApp" Click="btnApp_Click"/>
+            <Button Style="{StaticResource homeBtn}" Content="печать заявления" Height="35" Width="170" Margin="0 50" x:Name="btnPrint" Click="btnPrint_Click"/>
         </StackPanel>       
         <Frame Grid.Column="0" Background="{StaticResource белый}" x:Name="frame"/>
     </Grid>

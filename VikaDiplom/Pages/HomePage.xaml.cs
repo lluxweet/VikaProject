@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using VikaDiplom.Auth;
+using Application = Microsoft.Office.Interop.Word.Application;
 
 namespace VikaDiplom.Pages
 {
@@ -48,6 +49,23 @@ namespace VikaDiplom.Pages
             {
                 NavigationService.Navigate(new AuthPage());
             }            
+        }
+
+        private void btnPrint_Click(object sender, RoutedEventArgs e)
+        {
+            string filePath = @"C:\Users\мыших\Desktop\заявление.docx";
+
+            try
+            {
+                Application wordApp = new Application();
+                wordApp.Visible = true;
+
+                wordApp.Documents.Open(filePath);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ошибка при открытии документа: " + ex.Message);
+            }
         }
     }
 }

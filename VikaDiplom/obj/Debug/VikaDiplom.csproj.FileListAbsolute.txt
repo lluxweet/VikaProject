@@ -39,3 +39,4 @@ C:\Users\мыших\Desktop\VikaDiplom\VikaDiplom\obj\Debug\Windows\OpecunAddEdi
 C:\Users\мыших\Desktop\VikaDiplom\VikaDiplom\obj\Debug\Windows\OpecunAddEditWindow.baml
 C:\Users\мыших\Desktop\VikaDiplom\VikaDiplom\obj\Debug\Windows\MoreInformationChildWindow.g.cs
 C:\Users\мыших\Desktop\VikaDiplom\VikaDiplom\obj\Debug\Windows\MoreInformationChildWindow.baml
+C:\Users\мыших\Desktop\VikaDiplom\VikaDiplom\obj\Debug\VikaDiplom.csproj.ResolveComReference.cache
